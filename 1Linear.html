@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Linear Search</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <section>
+        <h1>Linear Search</h1>
+    </section>
+    <section>
+        <p><span style="font-weight:bold">Linear Search:</span>Linear search </p>
+    </section>
+    <section>
+    <h2 style="text-align:center">So, here is the code:</h2>
+    <pre>
+        #include&lt;stdio.h>
+
+            int linear_search(int a[],int n, int x)
+            {
+                int i;
+                for(i=0;i&lt;n;i++)
+                {
+                    if(a[i]==x)
+                        return i;
+                }
+                    i=-1;
+                    return i;
+            }
+            int main()
+            {
+                int n, x;
+                printf("How many elements?- ");
+                scanf("%d", &n);
+                int a[n];
+                printf("Enter elements:\n");
+                for(int i=0;i&lt;n;i++)
+                {
+                    scanf("%d", &a[i]);
+                }
+                printf("What element: ");
+                scanf("%d", &x);
+                linear_search(a,n,x);
+            }
+            
+        </pre>
+        </section>
+</body>
+</html>
