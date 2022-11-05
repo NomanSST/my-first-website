@@ -1,40 +1,29 @@
 body{
+    background-image: url("images/top-banner.png");
+    background-repeat: no-repeat;
     margin:0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-h1{
-    font-size:30px;
-    margin:20px;
-    position:relative;
-    left:40px;
-}
 
-.upper{
-    background-image: url("images/top-banner.png");
-    background-repeat: no-repeat;
+.header{
+    font-size:20px;
+    margin: 0px 0px 0px 50px;
 }
 h2{
     color:rgb(255, 5, 5);
 }
+
 .first{
     color:rgb(18, 109, 13);
     font-size:20px;
     font-weight:500;
     text-align:justify;
     width:35%;
-    float:left;
+    float:right;
     margin:5%;
     padding:2%;
-    position:relative;
-    left:50px;
 }
-.img1{
-    /*border: 2px solid red;*/
-    width:100%;
-    position:relative;
-    bottom:100px;
-    right:100px;
-}
+
 .link1{
     text-decoration: none;
     border-radius:5px;
@@ -44,60 +33,48 @@ h2{
     font-weight:700;
 }
 .second{
+    text-align:justify;
     /*border: 2px solid red;*/
     color:rgb(20, 108, 33);
     font-size: 20px;
     font-weight:500;
-    height:300px;
     width:35%;
     float:left;
     margin:5%;
     padding:2%;
-    position:relative;
-    bottom:200px;
-}
-.img2{
-    /*border: 2px solid red;*/
-    width:100%;
-}
-.second-hp{
-    position:relative;
-    top:50px;
-    right:30px;
-    text-align:justify;
-}
-.link2{
-    text-decoration: none;
-    border-radius:5px;
-    padding:10px 20px;
-    background-image:linear-gradient(45deg,rgb(255, 0, 247),red);
-    color:whitesmoke;
-    font-weight:700;
 }
 .third{
+    background-color:red;
+    border: 2px solid red;
+    height:250px;
+    max-width:40%;
     color:rgb(14, 82, 23);
     font-size:20px;
     font-weight:500;
-    border: 2px solid red;
-    height:225px;
-    width:50%;
     text-align:center;
     margin:5%;
-    position:relative;
-    top:900px;
-    left:300px;
+    padding:2%;  
 }
-.third-hp{
-    position:relative;
-    bottom:1000px;
-}
-a.third-hp{
+
+.link2{
     text-decoration: none;
     border-radius:5px;
     padding:10px 20px;
     background-image:linear-gradient(45deg,rgb(255, 0, 0),rgb(30, 0, 255));
     color:whitesmoke; 
     font-weight:700;
-    position:relative;
-    bottom:980px;
+}
+@media(max-width:600px){
+    div{
+
+        min-width:90%;
+        min-height: auto;
+    }
+}
+@media(max-width:800px){
+    div{
+
+        min-width:87%;
+        min-height: auto;
+    }
 }
