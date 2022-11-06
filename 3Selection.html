@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Selection Sort</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Selection Sort</h1>
+    </div>
+    <div class="info">
+        <p><span style="font-weight:bold">Selection Sort:</span>Selection sort </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+    <pre>
+        #include&lt;stdio.h>
+
+            void selection_sort(int a[], int n)
+            {
+                int i,j,index_min, temp;
+                for(i=0;i&lt;n-1;i++)
+                {
+                    index_min = i;
+                    for(j=i+1;j&lt;n;j++)
+                    {
+                        if(a[j]&lt;a[index_min])
+                        {
+                            index_min=j;
+                        }
+                    }
+                    if(index_min !=i)
+                    {
+                        temp=a[index_min];
+                        a[index_min]=a[i];
+                        a[i]=temp;
+                    }
+                }
+            }
+            
+            int main()
+            {
+                int a[]={19, 8, 11,-34,-6,-11, 3, 16, 14, 6, 12, 2};
+                int n=sizeof(a)/sizeof(a[0]);
+                selection_sort(a,n);
+                printf("A: ");
+                for(int i=0;i&lt;n;i++)
+                {
+                    printf("%d ",a[i]);
+                }
+            }
+            
+        </pre>
+    </div>
+</body>
+</html>
