@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Bubble Sort</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Bubble Sort</h1>
+    </div>
+    <div class="info">
+        <p><span style="font-weight:bold">Bubble Sort:</span>Bubble sort </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+    <pre>
+        #include&lt;stdio.h>
+            void bubble_sort(int a[], int n)
+            {
+                int i,j,temp;
+                for(i=0;i&lt;n-1;i++)
+                {
+                    for(j=0;j&lt;n-i-1;j++)
+                    {
+                        if(a[j]>a[j+1])
+                        {
+                            temp = a[j];
+                            a[j]=a[j+1];
+                            a[j+1]=temp;
+                        }
+                    }
+                }
+            }
+
+            int main()
+            {
+                int i,n,a[]={5, 9, 2, -5,6,0,15, 1};
+                n = sizeof(a)/sizeof(a[0]);
+                bubble_sort(a,n);
+                printf("A[]: ");
+                for(i=0;i&lt;n;i++)
+                    printf("%d ", a[i]);
+            }
+            
+        </pre>
+    </div>
+</body>
+</html>

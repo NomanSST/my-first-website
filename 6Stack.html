@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Stack</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Stack</h1>
+    </div>
+    <div class="info">
+        <p><span style="font-weight:bold">Stack:</span>Stack </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+    <pre>
+        #include&lt;stdio.h>
+            #define STACK_MAX 100
+            
+            typedef struct{
+                int top;
+                int data[STACK_MAX];
+            }Stack;
+            
+            void push(Stack *s, int item)
+            {
+                if(s->top&lt;STACK_MAX)
+                {
+                    s->data[s->top]=item;
+                    s->top=s->top+1;
+                }
+                else{
+                    printf("Stack is full..!\n");
+                }
+            }
+            int pop(Stack *s)
+            {
+                int item;
+                if(s->top==0)
+                {
+                    printf("Stack is empty..!\n");
+                }
+                else{
+                    s->top=s->top-1;
+                    item=s->data[s->top];
+                }
+                return item;
+            
+            }
+            int main()
+            {
+                Stack my_stack;
+                int item;
+                my_stack.top=0;
+                push(&my_stack, 1);
+                push(&my_stack, 2);
+                push(&my_stack, 3);
+                item=pop(&my_stack);
+                printf("%d\n", item);
+                item = pop(&my_stack);
+                printf("%d\n", item);
+                item=pop(&my_stack);
+                printf("%d\n", item);
+            }
+            
+        </pre>
+    </div>
+</body>
+</html>

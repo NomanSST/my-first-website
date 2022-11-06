@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Insertion Sort</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Insertion Sort</h1>
+    </div>
+    <div class="info">
+        <p><span style="font-weight:bold">Insertion Sort:</span>Insertion sort </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+    <pre>
+        #include&lt;stdio.h>
+            void insertion_sort(int a[], int n)
+            {
+                int i,j,item;
+                for(i=1;i&lt;n;i++)
+                {
+                    item=a[i];
+                    j=i-1;
+                    while(j>=0 && a[j]>item)
+                    {
+                        a[j+1]=a[j];
+                        j=j-1;
+                    }
+                    a[j+1]=item;
+                }
+            }
+            int main()
+            {
+                int i, n, a[]={1,2,3,-3,5,4,-2,0};
+                n=sizeof(a)/sizeof(a[0]);
+                insertion_sort(a,n);
+                printf("Sorted: ");
+                for(i=0;i&lt;n;i++)
+                    printf("%d ", a[i]);
+            }
+            
+        </pre>
+    </div>
+</body>
+</html>

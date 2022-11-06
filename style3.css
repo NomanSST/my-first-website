@@ -1,18 +1,37 @@
+body{
+    font-family: sans-serif;
+}
 h1{
-    font-size:40px;
+    font-size: 50px;
+    padding: 1%;
     text-align: center;
-    border: 2px solid red;
-    background-image: linear-gradient(45deg, green, rgb(255, 0, 0));
-    color: aqua;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.code{
+    border: 2px solid rgb(4, 90, 121);
+    margin:2% 20%;
+}
+.code h2{
+    text-align: center;
+    
+    margin-top:0px;
+    background-color: rgb(5, 5, 149);
+    color: white;
 }
 pre{
     font-size: 20px;
-    position:relative;
-    left:200px;
-    height: 200px;
-    width: 600px;
+    height: 300px;
+
     padding: 2%;
-    margin:2%;
+
     resize:both;
     overflow:auto;
 }
+@media(max-width: 712px){
+    /* For mobile phones: */
+    .info, .code{
+      min-width: 98%;
+      margin:1%;
+    }
+  }

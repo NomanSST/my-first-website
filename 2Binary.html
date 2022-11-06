@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Binary Search</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Binary Search</h1>
+    </div>
+    <div class="info">
+        <p><span style="font-weight:bold">Binary Search:</span>Binary search </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+    <pre>
+        #include&lt;stdio.h>
+
+            int binary_search(int a[],int x, int left, int right)
+            {
+                int i,mid,count=0;
+                for(i=left;i&lt;=right;i++)
+                {
+                    mid=(left+right)/2;
+                    if(a[mid]==x)
+                        return mid;
+                    else if(a[mid]&lt;x)
+                        left = mid+1;
+                    else{
+                        right=mid-1;
+                }
+                count++;
+            
+                }
+                    return -1;
+                printf("%d", count);
+            }
+            
+            int main()
+            {
+                int i,n,x;
+                int a[]={1,2,3,4,5};
+                n=sizeof(a)/sizeof(a[0]);
+                x=4;
+                int r=binary_search(a,x,0,n-1);
+                if(r==-1)
+                    printf("not found");
+                else
+                    printf("Found");
+            }
+              
+        </pre>
+    </div>
+</body>
+</html>
