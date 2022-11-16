@@ -105,7 +105,7 @@
                     if(pos&lt;0||pos>n)
                     {
                         printf("\nPosition cannot exceed limit from 0 to n(%d).\
-                               \nInput valid position.\n",n);
+                               \nInput valid position.\n",n-1);
                         goto insertion;
                     }
                     for(i=n; i>=pos; i--)
@@ -136,7 +136,7 @@
                     if(pos&lt;0||pos>n)
                     {
                         printf("\nPosition cannot exceed limit from 0 to n(%d).\
-                               \nInput valid position.\n",n);
+                               \nInput valid position.\n",n-1);
                         goto deletion;
                     }
                     for(i=pos+1; i&lt;=n; i++)
