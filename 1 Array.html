@@ -74,31 +74,31 @@
         <div class="code" >
         <h2>Code for Array Deletion:</h2>
         <pre>
-            #include&lt;stdio.h>
-                int main()
-                {
-                    int arr[]={1,2,3,4,5,6,7,8,9,10};
-                    int i,n,pos;
-                    n=sizeof(arr)/sizeof(arr[0]);
-                    printf("Array before deletion: ");
-                    for(i=0;i&lt;n;i++)
-                    {
-                        printf("%d ", arr[i]);
-                    }
-                    printf("\nEnter position to delete the value: ");
-                    scanf("%d", &pos);
-                    for(i=pos+1;i&lt;=n;i++)
-                    {
-                        arr[i-1]=arr[i];
-                    }
-                    n=n-1;
-                    printf("Array after deletion: ");
-                    for(i=0;i&lt;n;i++)
-                    {
-                        printf("%d ", arr[i]);
-                    }
-                }
-                
+    #include&lt;stdio.h>
+        int main()
+        {
+            int arr[]={1,2,3,4,5,6,7,8,9,10};
+            int i,n,pos;
+            n=sizeof(arr)/sizeof(arr[0]);
+            printf("Array before deletion: ");
+            for(i=0;i&lt;n;i++)
+            {
+                printf("%d ", arr[i]);
+            }
+            printf("\nEnter position to delete the value: ");
+            scanf("%d", &pos);
+            for(i=pos+1;i&lt;=n;i++)
+            {
+                arr[i-1]=arr[i];
+            }
+            n=n-1;
+            printf("Array after deletion: ");
+            for(i=0;i&lt;n;i++)
+            {
+                printf("%d ", arr[i]);
+            }
+        }
+        
         </pre>
     </div>
     
