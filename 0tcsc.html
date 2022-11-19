@@ -5,8 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA-Complexity</title>
+    <link rel="stylesheet" href="style3.css">
 </head>
 <body>
+    <div>
+        <h1>Complexity</h1>
+    </div>
     
+    <ul class="nav">
+        <li><a href="dsa.html">&lt; Previous</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="1 Array.html">Next ></a></li>
+    </ul>
+    <div class="topic">
+        <p><span style="font-weight:bold">Complexity:</span> An algorithm is a well-defined list of steps for solving a particular problem. One major purpose of this topic is to develop efficient algorithms for proccessing of our data. The time and space it uses are two major measures of the efficiency of an algorithm. The complexity of an algorithm is the function which gives the running time and/or space in terms of the input size.
+        <br>
+        There are two types of complexity:<span style="font-weight:bold">Time Complexity & Space Complexity</span></p>
+        <p>When a program is executed, the following steps are being proccessed:
+            <ul style="font-weight:700">
+                <li>Assignment Operation</li>
+                <li>Comparison Operation</li>
+                <li>Mathematical Operation</li>
+                <li>Function calling</li>
+                <li>Proccesses inside Function</li>
+            </ul>
+        </p>
+        <p>Complexity of these steps are also diiferent. Complexity is expressed by <span style="font-weight:bold">"Big-Oh (O) </span>notation. Generally, Time complexity of "Function calling" is ignored during calculation. Time complexity for each Assignment Operation, Comparison Operation and Mathematical Operation is <span style="font-weight:bold">O(1).</span></p>
+        <p>Let's take a look on some examples:
+            <br>
+            <br>
+            Example 01: 
+            <pre class="c1">
+                #include&lt;stdio.h>
+                    int main() {
+                        int n1, n2, result;
+                        
+                        n1=20; <span style="color: rgb(255, 255, 255); font-weight:bold; background-color: red;">&lt;---1</span>
+                        n2=30; <span style="color: rgb(255, 255, 255); font-weight:bold;background-color: red">&lt;---2</span>
+                        result=n1+n2; <span style="color: rgb(255, 255, 255); font-weight:bold;background-color: red">&lt;---3&4</span>
+                        
+                        return 0;
+                    }
+                </pre>
+            
+        In this program, we can see there are 3 assignment operations and 1 mathematical operations. So what is the time complexity? O(1+1+1+1)=O(4)..? No, the complexity is O(1). The value of n1 or n2 can be anything. Numbers of operation are constant against the input n. Even if the input is 10000000, that 4 operations remain the same. </p>
+    </div>
 </body>
 </html>
