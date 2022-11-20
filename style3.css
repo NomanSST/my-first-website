@@ -35,14 +35,6 @@ pre{
     padding:0px 16px;
     height: auto;
 }
-@media(max-width: 712px){
-    /* For mobile phones: */
-    .info, .code{
-      min-width: 98%;
-      margin:1%;
-    }
-  }
-
 .nav{
     margin-top: 0px;
     display: flex;
@@ -63,3 +55,11 @@ pre{
 a:hover{
     background-color: green;
 }
+@media(max-width: 712px){
+    /* For mobile phones: */
+    .info, .code{
+      min-width: 98%;
+      margin:1%;
+    }
+  }
+
