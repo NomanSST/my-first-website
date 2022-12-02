@@ -1,6 +1,22 @@
 body{
     font-family: sans-serif;
 }
+.head{
+    font-size: 50px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 1rem 0;
+}
+.head h1{
+    margin: 0;
+    padding-bottom: 0%;
+}
+.head h3{
+    font-size: 30px;
+    padding-bottom: 1rem;
+    margin: 0;
+}
 h1{
     font-size: 50px;
     padding: 1%;
@@ -9,8 +25,9 @@ h1{
     color: white;
     margin: 1rem 0;
 }
-.topic{
-    padding: 0px 16px;
+
+.info{
+    padding: 0px 5px;
     text-align:justify;
     font-size: 20px;
 }
@@ -31,9 +48,13 @@ pre{
     resize:both;
     overflow:auto;
 }
-.c1{
-    padding:0px 16px;
+pre.c1{
+    font-weight: 600;
+    color:rgb(0, 0, 0);
     height: auto;
+    background-color:rgb(207, 249, 253);
+
+    
 }
 .nav{
     margin-top: 0px;
@@ -58,8 +79,9 @@ a:hover{
 @media(max-width: 712px){
     /* For mobile phones: */
     .info, .code{
-      min-width: 98%;
+      min-width: 100%;
       margin:1%;
+      
     }
   }
 
