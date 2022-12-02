@@ -80,7 +80,7 @@ img{
 @media(max-width: 712px){
     /* For mobile phones: */
     .top, .first, .second, .hire, .third{
-      min-width: 98%;
+      min-width: 99%;
       margin:1%;
     }
   }

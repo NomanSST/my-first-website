@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Merge Sort</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Merge Sort</h1>
+    </div>
+    <ul class="nav">
+        <li><a href="7Insertion.html">&lt; Previous</a></li>
+        <li><a href="dsa.html">DSA Home</a></li>
+        <li><a href="9Quick.html">Next ></a></li>
+    </ul>
+    <div class="info">
+        <p><span style="font-weight:bold">Merge Sort:</span>Merge sort </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+<pre>   
+#include&lt;stdio.h>
+    void merge_sort(int arr[], int left, int right);
+    void merge(int arr[], int left, int mid, int right);
+    
+    
+    int main()
+    {
+        while(1)
+        {
+    start:
+            printf("\n___MERGE SORT___\n\n");
+            int n;
+    size:
+            printf("Enter the size: ");
+            scanf("%d", &n);
+            if(n&lt;1)
+            {
+                printf("Invalid size..! Array size cannot be less than 1.\n\n");
+                goto size;
+            }
+            int arr[n];
+            printf("\nEnter Array Elements: ");
+            for(int i=0; i&lt;n; i++)
+            {
+                scanf("%d", &arr[i]);
+            }
+            merge_sort(arr, 0, n-1);
+            printf("Sorted Array[]: ");
+            for(int i=0; i&lt;n; i++)
+            {
+                printf("%d ", arr[i]);
+            }
+            printf("\n");
+            char ch;
+            printf("\nTo continue, Type Y(Y->Yes): ");
+            scanf(" %c", &ch);
+            if(ch=='Y')
+            {
+                printf("\n");
+                goto size;
+    
+            }
+            else
+            {
+                printf("\nMerge sort finished..! Thank you.\n");
+                break;
+            }
+        }
+    
+    }
+    void merge_sort(int arr[], int left, int right)
+    {
+        int mid;
+        if(left&lt;right)
+        {
+            mid=(left+right)/2;
+            merge_sort(arr,left, mid);
+            merge_sort(arr, mid+1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+    
+    void merge(int arr[], int left, int mid, int right)
+    {
+        int n1, n2, i,j,k;
+        n1=mid-left+1;
+        n2=right-mid;
+    
+        int L[n1+1], R[n2+1];
+        for(i=1; i<=n1; i++)
+        {
+            L[i]=arr[left+i-1];
+        }
+        for(j=1; j<=n2; j++)
+        {
+            R[j]=arr[mid+j];
+        }
+        L[n1+1]=9999;
+        R[n2+1]=9999;
+        i=1;
+        j=1;
+        for(k=left; k&lt;=right; k++)
+        {
+            if(L[i]&lt;=R[j])
+            {
+                arr[k]=L[i];
+                i++;
+            }
+            else
+            {
+                arr[k]=R[j];
+                j++;
+            }
+        }
+    }</pre>
+    </div>
+</body>
+</html>

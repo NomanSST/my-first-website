@@ -17,7 +17,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="1 Array.html">Next ></a></li>
     </ul>
-    <div class="topic">
+    <div class="info">
         <p><span style="font-weight:bold">Complexity:</span> An algorithm is a well-defined list of steps for solving a particular problem. One major purpose of this topic is to develop efficient algorithms for proccessing of our data. The time and space it uses are two major measures of the efficiency of an algorithm. The complexity of an algorithm is the function which gives the running time and/or space in terms of the input size.
         <br>
         There are two types of complexity:<span style="font-weight:bold">Time Complexity & Space Complexity</span></p>
@@ -30,25 +30,86 @@
                 <li>Proccesses inside Function</li>
             </ul>
         </p>
-        <p>Complexity of these steps are also diiferent. Complexity is expressed by <span style="font-weight:bold">"Big-Oh (O) </span>notation. Generally, Time complexity of "Function calling" is ignored during calculation. Time complexity for each Assignment Operation, Comparison Operation and Mathematical Operation is <span style="font-weight:bold">O(1).</span></p>
+        <p>Complexity of these steps are also diiferent. Complexity is expressed by <span style="font-weight:bold">"Big-Oh (O) </span>notation.
+            <br>
+            <span style="font-weight:bold">Time Complexity:</span> Time complexity is defined as the amount of time taken by an algorithm to run, as a function of the length of the input. It measures the time taken to execute each statement of code in an algorithm. Generally, Time complexity of "Function calling" is ignored during calculation. Time complexity for each Assignment Operation, Comparison Operation and Mathematical Operation is <span style="font-weight:bold">O(1).</span></p>
         <p>Let's take a look on some examples:
             <br>
             <br>
             Example 01: 
-            <pre class="c1">
-                #include&lt;stdio.h>
-                    int main() {
-                        int n1, n2, result;
-                        
-                        n1=20; <span style="color: rgb(255, 255, 255); font-weight:bold; background-color: red;">&lt;---1</span>
-                        n2=30; <span style="color: rgb(255, 255, 255); font-weight:bold;background-color: red">&lt;---2</span>
-                        result=n1+n2; <span style="color: rgb(255, 255, 255); font-weight:bold;background-color: red">&lt;---3&4</span>
-                        
-                        return 0;
-                    }
-                </pre>
+<pre class="c1">
+    #include&lt;stdio.h>
+        int main() {
+            int n1, n2, result;
             
-        In this program, we can see there are 3 assignment operations and 1 mathematical operations. So what is the time complexity? O(1+1+1+1)=O(4)..? No, the complexity is O(1). The value of n1 or n2 can be anything. Numbers of operation are constant against the input n. Even if the input is 10000000, that 4 operations remain the same. </p>
+            n1=20; <span style="color: rgb(255, 255, 255); font-weight:bold; background-color: red;">&lt;---1</span>
+            n2=30; <span style="color: rgb(255, 255, 255); font-weight:bold;background-color: red">&lt;---2</span>
+            result=n1+n2; <span style="color: rgb(255, 255, 255); font-weight:bold;background-color: red">&lt;---3&4</span>
+            
+            return 0;
+        }</pre>
+            
+        In this program, we can see there are 3 assignment operations and 1 mathematical operations. So what is the time complexity? O(1+1+1+1)=O(4)..? No, the complexity is<span style="font-weight:bold">O(1)</span>. The value of n1 or n2 can be anything. Numbers of operation are constant against the input n. Even if the input is 10000000, that 4 operations remain the same. 
+    <br>
+    <br>
+        Now check another code to determine its time complexity.
+    <br>
+    <br>
+        Example 02:
+    <pre class="c1">
+    #include&lt;stdio.h>
+    int main() {
+        int n, result;
+        
+        scanf("%d",&n);
+        result=n*(n+1)/2; <span style="color: rgb(255, 255, 255); font-weight:bold;background-color:rgb(255, 0, 0)">&lt;--1,2,3&4</span>
+        printf("result=%d\n",result);
+        
+        return 0;
+    }</pre>
+    In this program, there are 3 mathematical operations and 1 assignment operation. The number of operations doesn't depend on the value of n. So, the time complexity is <span  style="font-weight:bold;">O(1).</span>
+    <br>
+    <br>
+        Now check this code below and try to understand its time complexity.
+    <br>
+    <br>
+        Example 03:
+<pre class="c1">
+#include&lt;stdio.h>
+
+    int main() {
+        int i, n, result=0;
+        scanf("%d", &n);
+        for(i=0; i&lt;n; i++){<span style="color: rgb(255, 255, 255); font-weight:bold;background-color:rgb(0, 255, 26)">&lt;---</span>
+            result=result+i;<span style="color: rgb(255, 255, 255); font-weight:bold;background-color:rgb(255, 0, 0)">&lt;--1&2</span>
+        }
+        printf("result=%d\n", result);
+        return 0;
+    }</pre>
+    In this program, there are 2 operations inside the loop. The loop runs n times according to the input n. If n=10, number of operation=20; for n=100, operations=200. So, for the value of n, the number of operations is 2n. So, the time complexity is <span  style="font-weight:bold;">O(2*n)=2*O(n)=<span style="color:rgb(246, 5, 5)">O(n)</span>.</span>
+    <br>
+    <br>
+    Now let's look at another program:
+    <br>
+    <br>
+    Example 04:
+<pre class="c1">
+#include &lt;stdio.h>
+int main() 
+{
+    int i,j,n,count=0;
+    scanf("%d", &n);
+    for(i=0; i&lt;n; i++){<span style="color: rgb(255, 255, 255); font-weight:bold;background-color:rgb(53, 248, 4)">&lt;---</span>
+        for(j=0; j&lt;n; j++){<span style="color: rgb(255, 255, 255); font-weight:bold;background-color:rgb(85, 253, 7)">&lt;---</span>
+            count = count + 1;<span style="color: rgb(255, 255, 255); font-weight:bold;background-color:rgb(255, 0, 0)">&lt;--1&2</span>
+        }
+    }
+    printf("n=%d  count=%d\n", n, count);
+    return 0;
+}</pre> 
+In the example-04, there are 2 operations inside the nested loop. The loop "i" runs n times and for every "i" turn, loop "j" runs for n times. So the total loop run is  <span  style="font-weight:bold;">n*n=n<sup>2</sup></span>. If n=1,loop run=1; n=2, loop run=4; n=3, loop run=9... So, for the input n, the number of operations is also n<sup>2</sup>. In this case, the time complexity is <span  style="font-weight:bold;">O(n*n)=<span style="color:rgb(246, 5, 5)">O(n<sup>2</sup>)</span>.
+</p>
+    
     </div>
 </body>
 </html>

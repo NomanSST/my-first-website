@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Quick Sort</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Quick Sort</h1>
+    </div>
+    <ul class="nav">
+        <li><a href="8Merge.html">&lt; Previous</a></li>
+        <li><a href="dsa.html">DSA Home</a></li>
+        <li><a href="10Stack.html">Next ></a></li>
+    </ul>
+    <div class="info">
+        <p><span style="font-weight:bold">Quick Sort:</span>Quick sort </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+<pre>   
+#include&lt;stdio.h>
+
+    void quick_sort(int arr[], int low, int high);
+    int partition(int arr[], int low, int high);
+    
+    int main()
+    {
+        printf("___QUICK SORT___\n");
+    size:
+        printf("\nEnter the size of the Array: ");
+        int n;
+        scanf("%d", &n);
+        if(n&lt;1)
+            goto size;
+        int arr[n];
+        int i;
+        printf("\nEnter the elements: ");
+        for(i=0; i&lt;n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+        quick_sort(arr, 0, n-1);
+        printf("Quick Sorted Array: ");
+    
+        for(i=0; i&lt;n; i++)
+        {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+    again:
+        printf("\nTo continue, press 'Y': ");
+        char ch;
+        scanf(" %c", &ch);
+        if(ch=='Y'){
+            goto size;
+
+        }
+        else{
+            printf("\nSorting finished. THank you..!\n");
+        }
+    }
+    void quick_sort(int arr[], int low, int high)
+    {
+        if(low&lt;high)
+        {
+            int p=partition(arr, low, high);
+            quick_sort(arr, low, p-1);
+            quick_sort(arr, p+1, high);
+        }
+    }
+    int partition(int arr[], int low, int high)
+    {
+        int i,j, pivot,temp,temp1;
+        pivot=arr[high];
+        i=low-1;
+        for(j=low; j&lt;high; j++)
+        {
+            if(arr[j]&lt;=pivot)
+            {
+                i=i+1;
+                temp=arr[j];
+                arr[j]=arr[i];
+                arr[i]=temp;
+            }
+        }
+        temp=arr[i+1];
+        arr[i+1]=arr[high];
+        arr[high]=temp;
+    
+        return (i+1);
+    }</pre>
+    </div>
+</body>
+</html>
