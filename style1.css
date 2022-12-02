@@ -13,10 +13,12 @@ input{
     font-size:larger;
 }
 .link{
+    border:5px solid rgb(255, 0, 0);
     font-size:25px;
     margin:2% 20%;
-    border: 2px solid red;
     text-align:center;
+    border-radius: 16px;;
+    box-shadow: 10px 10px 40px rgb(127, 236, 255);
 }
 pre{
     text-align:justify;

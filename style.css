@@ -2,27 +2,30 @@
     box-sizing: border-box;
 }
 body{
+    font-size: 20px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 h1{
     color:aliceblue;
-    background-color:rgb(149, 6, 6);
+    background-color:rgb(135, 6, 6);
     text-align: center;
     padding: 15px;
-    font-size: 4vw;  
+    font-size: 4vw;
+    border-radius: 8px;
 }
 .top{
     float:left;
     width:49.5%;
 }
 .first{
+    border-radius: 0px 16px 16px 0px;
     display:block;
     text-align:center;
     padding:8px;
     margin:7px 0px;
     background-color:rgb(62, 4, 115);
     color:white;
-    font-weight:400;
+    font-weight:;
 
 }
 img{
@@ -32,13 +35,14 @@ img{
     text-align:justify;
 }
 .second{
+    border-radius: 16px 0px 0px 16px;
     text-align:center;
     width:49.5%;
     float:left;
     padding: 8px;
     margin:7px 0px 0px 7px;
     background-color:rgb(64, 5, 119);
-    font-weight:400;
+    font-weight:;
     color:white;
 }
 .second p{
@@ -47,10 +51,10 @@ img{
 }
 .hire{
     text-align:center;
-    background-color: green;
+    background-color: rgb(69, 3, 69);
     color: white;
-    margin: 20px 200px;
     padding: 2%;
+    border-radius: 20px 20px 0px 0px;
 }
 .hire a{
     text-decoration: none;
@@ -62,11 +66,13 @@ img{
 }
 .third{
     text-align: center;
-    color:aliceblue;
+    border: 3px solid green;
+    border-radius: 50px 0px;
+    font-size: 20px;
     font-weight:700;
     margin: 30px 200px;
     padding: 2%;
-    background-color: rgb(6, 26, 238);
+    box-shadow: 10px 10px 40px rgb(0, 234, 255);
 }
 .third a{
     text-decoration: none;
