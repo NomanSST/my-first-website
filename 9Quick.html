@@ -22,11 +22,11 @@
     <div class="code" >
     <h2>So, here is the code:</h2>
 <pre>   
-#include&lt;stdio.h>
+    #include&lt;stdio.h>
 
     void quick_sort(int arr[], int low, int high);
     int partition(int arr[], int low, int high);
-    
+        
     int main()
     {
         printf("___QUICK SORT___\n");
@@ -45,7 +45,7 @@
         }
         quick_sort(arr, 0, n-1);
         printf("Quick Sorted Array: ");
-    
+
         for(i=0; i&lt;n; i++)
         {
             printf("%d ", arr[i]);
@@ -63,6 +63,7 @@
             printf("\nSorting finished. THank you..!\n");
         }
     }
+    
     void quick_sort(int arr[], int low, int high)
     {
         if(low&lt;high)
@@ -72,6 +73,7 @@
             quick_sort(arr, p+1, high);
         }
     }
+
     int partition(int arr[], int low, int high)
     {
         int i,j, pivot,temp,temp1;
@@ -90,7 +92,7 @@
         temp=arr[i+1];
         arr[i+1]=arr[high];
         arr[high]=temp;
-    
+
         return (i+1);
     }</pre>
     </div>

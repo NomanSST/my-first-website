@@ -23,55 +23,52 @@
     <h2>So, here is the code:</h2>
 <pre>   
 #include&lt;stdio.h>
-    void merge_sort(int arr[], int left, int right);
-    void merge(int arr[], int left, int mid, int right);
+
+void merge_sort(int arr[], int left, int right);
+void merge(int arr[], int left, int mid, int right);
     
-    
-    int main()
-    {
-        while(1)
-        {
+int main()
+{
     start:
-            printf("\n___MERGE SORT___\n\n");
-            int n;
+        printf("\n___MERGE SORT___\n\n");
+        int n;
     size:
-            printf("Enter the size: ");
-            scanf("%d", &n);
-            if(n&lt;1)
-            {
-                printf("Invalid size..! Array size cannot be less than 1.\n\n");
-                goto size;
-            }
-            int arr[n];
-            printf("\nEnter Array Elements: ");
-            for(int i=0; i&lt;n; i++)
-            {
-                scanf("%d", &arr[i]);
-            }
-            merge_sort(arr, 0, n-1);
-            printf("Sorted Array[]: ");
-            for(int i=0; i&lt;n; i++)
-            {
-                printf("%d ", arr[i]);
-            }
-            printf("\n");
-            char ch;
-            printf("\nTo continue, Type Y(Y->Yes): ");
-            scanf(" %c", &ch);
-            if(ch=='Y')
-            {
-                printf("\n");
-                goto size;
-    
-            }
-            else
-            {
-                printf("\nMerge sort finished..! Thank you.\n");
-                break;
-            }
+        printf("Enter the size: ");
+        scanf("%d", &n);
+        if(n&lt;1)
+        {
+            printf("Invalid size..! Array size cannot be less than 1.\n\n");
+            goto size;
         }
-    
+        int arr[n];
+        printf("\nEnter Array Elements: ");
+        for(int i=0; i&lt;n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+        merge_sort(arr, 0, n-1);
+        printf("Sorted Array[]: ");
+        for(int i=0; i&lt;n; i++)
+        {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+        char ch;
+        printf("\nTo continue, Type Y(Y->Yes): ");
+        scanf(" %c", &ch);
+        if(ch=='Y')
+        {
+            printf("\n");
+            goto size;
+
+        }
+        else
+        {
+            printf("\nMerge sort finished..! Thank you.\n");
+            break;
+        }
     }
+
     void merge_sort(int arr[], int left, int right)
     {
         int mid;

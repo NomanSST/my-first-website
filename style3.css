@@ -34,11 +34,12 @@ h1{
 .code{
     border: 2px solid rgb(4, 90, 121);
     margin:2% 20%;
+    box-shadow: 16px  16px 40px rgba(255, 0, 0, 0.523);
 }
 .code h2{
     text-align: center;
     margin-top:0px;
-    background-color: rgb(5, 5, 149);
+    background-color:rgb(97, 2, 156);
     color: white;
 }
 pre{
