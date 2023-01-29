@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Greedy Appproach</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>Factional Greedy Knapsack Knapsack</h1>
+    </div>
+    <ul class="nav">
+        <li><a href="11 Queue.html">&lt; Previous</a></li>
+        <li><a href="dsa.html">DSA Home</a></li>
+        <li><a href="">Next ></a></li>
+    </ul>
+    <div class="info">
+        <p><span style="font-weight:bold">Fractional Knapsack(Greedy Approach):</span> Fractional knapsack </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+    <pre>
+    #include<stdio.h>
+        void GreedyKnapsack(int num, int capacity);
+        
+        int main()
+        {
+            printf("__FRACTIONAL KNAPSACK PROBLEM__\n\n");
+        size:
+            printf("\nHow many objects: ");
+            int num,m;
+            scanf("%d", &num);
+            if(num&lt;1)
+            {
+                printf("\nInvalid objects. Input valid objects number.\n");
+                goto size;
+            }
+            printf("\nEnter the capacity(m): ");
+            scanf("%d", &m);
+        
+            GreedyKnapsack(num, m);
+        
+            printf("\nTo continue, Type Y: ");
+            char ch;
+            scanf(" %c", &ch);
+            if(ch=='Y')
+            {
+                goto size;
+            }
+            else
+            {
+                printf("\nCalculation finished. Thank you.\n");
+            }
+        }
+        
+        void GreedyKnapsack(int num, int m)
+        {
+            float  p[num], w[num], ratio[num];
+            int objects[num], i, j, k, temp;
+            printf("\nEnter profit(p) & weight(w):\n");
+            for(i=1; i&lt;=num; i++)
+            {
+                scanf("%f %f", &p[i], &w[i]);
+            }
+            for(i=1; i&lt;=num; i++)
+            {
+                ratio[i]=p[i]/w[i];
+            }
+            printf("\nObjects Profit  Weight\n");
+            for(i=1; i&lt;=num; i++)
+            {
+                printf("%d\t%.2f\t%.2f\n",i,p[i],w[i]);
+            }
+            for(i=1; i&lt;=num; i++)
+            {
+                for(j=i+1; j&lt;=num; j++)
+                {
+                    if(ratio[i]&lt;ratio[j])
+                    {
+                        temp=ratio[j];
+                        ratio[j]=ratio[i];
+                        ratio[i]=temp;
+        
+                        temp = p[j];
+                        p[j]=p[i];
+                        p[i]=temp;
+        
+                        temp=w[j];
+                        w[j]=w[i];
+                        w[i]=temp;
+                    }
+                }
+            }
+            int u=m;
+            float x[num], tp=0.0;
+            for(i=1; i&lt;=num; i++)
+            {
+                x[i]=0.0;
+            }
+            for(i=1; i&lt;=num; i++)
+            {
+                if(w[i]>u)
+                {
+                    break;
+                }
+                else
+                {
+                    x[i]=1.00;
+                    u = u - w[i];
+                }
+            }
+            if(i&lt;=num)
+            {
+                x[i]=u/w[i];
+            }
+            for(i=1; i&lt;=num; i++)
+            {
+                tp = tp+(p[i]*x[i]);
+            }
+            printf("\nSolution vector(xi): ");
+            for(i=1; i&lt;=num; i++)
+            {
+                printf("%.2f ",x[i]);
+            }
+            printf("\n\nMaximum profit: %.2f\n",tp);
+        }  </pre>
+    </div>
+</body>
+</html>
