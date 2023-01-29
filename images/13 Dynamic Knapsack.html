@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Dynamic Programming</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div>
+        <h1>0/1 Knapsack Dynamic Programming</h1>
+    </div>
+    <ul class="nav">
+        <li><a href="12 Fractional Knapsack.html">&lt; Previous</a></li>
+        <li><a href="dsa.html">DSA Home</a></li>
+        <li><a href="">Next ></a></li>
+    </ul>
+    <div class="info">
+        <p><span style="font-weight:bold">0/1 Knapsack(Dynamic Programming):</span> Dynamic knapsack </p>
+    </div>
+    <div class="code" >
+    <h2>So, here is the code:</h2>
+    <pre>
+    #include&lt;stdio.h>
+
+        int max(int a, int b)
+        {
+            if(a>b)
+                return a;
+            else
+                return b;
+        }
+        
+        int KS(int W, int pft[], int wt[], int n)
+        {
+            int i,j;
+            int K[n+1][W+1];
+            for(i=0; i&lt;=n; i++)
+            {
+                for(j=0; j&lt;=W; j++)
+                {
+                    if(i==0||j==0)
+                        K[i][j]=0;
+                    else if(wt[i-1]&lt;=j)
+                        K[i][j]=max(pft[i-1]+ K[i-1][j-wt[i-1]], K[i-1][j]);
+                    else
+                        K[i][j]=K[i-1][j];
+                }
+            }
+            return K[n][W];
+        }
+        
+        
+        int main()
+        {
+            int i, n, W;
+            printf("How many items: ");
+            scanf("%d", &n);
+            int pft[20], wt[20];
+            printf("Enter profit and weight\n");
+            for(i=0; i&lt;n; i++)
+            {
+                printf("item-%d: ", i++);
+                scanf("%d%d", &pft[i], &wt[i]);
+            }
+            printf("Enter the size of the Knapsack: ");
+            scanf("%d", &W);
+            printf("\nThe optimal profit: %d",KS(W, pft, wt, n));
+        } </pre>
+    </div>
+</body>
+</html>
